@@ -1,9 +1,39 @@
+class MasterList
+	attr_reader  :todo_lists
+	# Initialize todo list with a title and no todo lists
+	def initialize
+		@todo_lists = []
+	end
+	def todo_list
+		@todo_lists
+	end
+	def add_todo_list(new_todo_list)
+		todo_list = TodoList.new(new_todo_list)
+		@todo_lists.push(todo_list)
+	end
+	
+	def print_index
+		@todo_lists.each_with_index do |title, index|
+			puts "#{list.print_list}"
+		end
+	end
+	def print_lists
+       puts @title 
+  end
+end
+	
+
 class TodoList
-	attr_reader :title, :items
+	attr_reader :title, :date_created, :items
 	# Initialize todo list with a title and no items
 	def initialize(list_title)
 	  @title = list_title
+	  @date_created = Time.now
 	  @items = Array.new # Starts empty! No Items yet!
+	end
+	def add_todo_list(new_todo_list)
+		todo_list = TodoList.new(new_todo_list)
+		@todo_lists.push(todo_list)
 	end
 	def title
 		@title 
@@ -16,12 +46,12 @@ class TodoList
 	end
 	# add_item to the list
 	def add_item(new_item)
-	item = Item.new(new_item)
-	@items << item
+		item = Item.new(new_item)
+		@items.push(item)
 	end
 	# changing status on specific task
   def update_item_status(index, status)
-        @items[index - 1].update_task_status(status)
+    @items[index - 1].update_task_status(status)
   end
 
 	# delete_item from the list
@@ -32,17 +62,21 @@ class TodoList
 	puts "-" * 50
 	end
 	def print_list_title
-        border
-        puts @title
-        border
+	  border
+	  puts @title
+	  border
   end
+  
 	def print_list
 		# print list title
 		print_list_title
-		@items.each_with_index do |task, index|
-			puts "#{task.print_task}"
+		@items.each_with_index do |list, index|
+			puts "#{list.print_list}"
 		end
 	end
+	def print_task
+       puts "Description: #{@description}" 
+  end
 end
 	
 class Item
@@ -54,6 +88,8 @@ class Item
 	def initialize(item_description)
 	  @description = item_description
 	  @completed_status = false
+	  @date_created = Time.now
+	 
 	end
 	def add_item(new_item)
 	  @item = Item.new(new_item)
@@ -84,6 +120,7 @@ class User
 	def initialize(first_name, last_name)
 	  @first_name = first_name
 	  @last_name = last_name
+	  @date_created = Time.now
 	end
 
 	def add_user(new_user)

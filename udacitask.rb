@@ -1,4 +1,5 @@
 require_relative 'todolist.rb'
+require_relative 'index.rb'
 
 # Creates a new todo list
 list_one = TodoList.new("My First To Do List: ")
@@ -35,4 +36,8 @@ list_one.update_title("Friday List")
 
 # Print the list
 list_one.print_list
+
+
+# FEATURES 
+
 
