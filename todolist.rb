@@ -1,4 +1,3 @@
-
 class TodoList
 	attr_accessor :title, :items
 	# Initialize todo list with a title and no items

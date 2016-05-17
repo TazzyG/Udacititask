@@ -47,7 +47,7 @@ list_one.print_list
 # Add Users and Assign Tasks
 list_one.add_assignment(1, "Laurie")
 # Print the list
-list_one.print_list
+list_one.print_list_of_uncompleted_tasks
 # Print the list of open Tasks
 
 
