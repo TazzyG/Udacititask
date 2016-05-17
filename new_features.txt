@@ -2,7 +2,3 @@ Feature #1: Add Date Created to tasks
 Feature #2: Add Optional Due Date to Tasks
 Feature #3: Add Users and Assign Tasks
 
-examples provided for inspiration include:
-- Save the list to a file, and load the list file if one already exists.
-- Allow multiple users to create their own to-do lists.
-- Add due dates, optional due dates, times, etc.

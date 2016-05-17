@@ -1,0 +1,24 @@
+commit 87b519ba160c89e11353479fc339599df13f015c
+Author: Laurie <gloge@haathi-consulting.com>
+Date:   Tue May 17 12:35:37 2016 -0600
+
+    Add ability to Assign a User
+
+commit 7468a2fc6305a3f3a819c3637b26093733be27f9
+Author: Laurie <gloge@haathi-consulting.com>
+Date:   Sun May 15 15:11:57 2016 -0600
+
+    set up MasterList class but it does not add todo lists to array yet, work to
+
+commit 88d8b7bf3fcc1d3d160c3697b1f41f476b652ca1
+Author: Laurie <gloge@haathi-consulting.com>
+Date:   Sat May 14 16:31:45 2016 -0600
+
+    basic list requirements, todolist and tasks completed and tested
+
+commit a505aecfe3f2519094f21d6b0bd3735b739e86b4
+Author: Laurie <gloge@haathi-consulting.com>
+Date:   Fri May 13 18:12:54 2016 -0600
+
+    simple to do list with initilize and add item
+:
