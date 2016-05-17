@@ -50,13 +50,20 @@ class TodoList
 		@items.each_with_index do |task, index|
 			puts "#{task.print_task}"
 		end
-		pretty_line
+		puts ""
 	end	
+	def print_list_of_uncompleted_tasks
+		pretty_line
+		@items.each_with_index do |task, index|			
+			puts "#{task.print_open_tasks}"
+		end
+		puts ""
+	end
 end
 	
 class Item
 
-	attr_accessor :description, :completed_status, :date_created, :date_required, :users
+	attr_accessor :description, :completed_status, :date_created, :date_required
 
 	# Initialize item with a description and marked as
 	# not complete
@@ -68,6 +75,9 @@ class Item
 	end
 	def user
 		@users
+	end
+	def name
+		@user.name
 	end
 	def add_item(new_item)
 	  @item = Item.new(new_item)
@@ -87,7 +97,12 @@ class Item
   end
   # returning "true" if status is "done"  
 	def print_task	
-    "Complete: #{@completed_status}, Added on: #{@date_created}, Description: #{ @description }, by: (#{ @date_required}) assigned to: (#{@user.name})"
+    "Complete: #{@completed_status}, Added on: #{@date_created}, Description: #{ @description }, by: (#{ @date_required}) assigned to: (#{@user.name if @user})"
+  end
+  def print_open_tasks
+  	if @completed_status == false
+    	"Description: #{ @description }, by: (#{ @date_required}) assigned to: (#{@user.name if @user})"
+  	end
   end
 end
 class User
@@ -99,7 +114,9 @@ class User
 	end
 	def assign_user(name)
 		@user = User.new(name)
-		@name = name
+	end
+	def name
+		@name 
 	end
 end
 

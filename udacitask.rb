@@ -1,5 +1,4 @@
 require_relative 'todolist.rb'
-require_relative 'index.rb'
 
 # Creates a new todo list
 list_one = TodoList.new("My First To Do List: ")
@@ -39,9 +38,19 @@ list_one.print_list
 
 
 # FEATURES 
-# Added Created Date and Due date
+# Added Created Date and Due date (see by printing the list)
 list_one.print_list
 # Update the date required in the first item 
 list_one.update_date_required(1,5)
+# Print the list
+list_one.print_list
+# Add Users and Assign Tasks
+list_one.add_assignment(1, "Laurie")
+# Print the list
+list_one.print_list
+# Print the list of open Tasks
+
+
+
 
 
