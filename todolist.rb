@@ -1,12 +1,9 @@
 class TodoList
-	attr_accessor :title, :items
+	attr_reader :title, :items
 	# Initialize todo list with a title and no items
 	def initialize(list_title)
 	  @title = list_title
 	  @items = Array.new # Starts empty! No Items yet!
-	end
-	def add_todo_list(new_todo_list)
-		todo_list = TodoList.new(new_todo_list)
 	end
 	def title
 		@title 
@@ -49,20 +46,26 @@ class TodoList
 		@items.each_with_index do |task, index|
 			puts "#{task.print_task}"
 		end
-		puts ""
+		puts 
 	end	
 	def print_list_of_uncompleted_tasks
 		pretty_line
 		@items.each_with_index do |task, index|			
 			puts "#{task.print_open_tasks}"
 		end
-		puts ""
+		puts 
+	end
+	def delete_completed_tasks
+		@items.each_with_index do |task, index|			
+			 if task.completed? task.task_delete(index)
+			end
+	  end
 	end
 end
 	
 class Item
 
-	attr_accessor :description, :completed_status, :date_created, :date_required
+	attr_reader :description, :completed_status, :date_created, :date_required
 
 	# Initialize item with a description and marked as
 	# not complete
@@ -78,9 +81,8 @@ class Item
 	def name
 		@user.name
 	end
-	def add_item(new_item)
-	  @item = Item.new(new_item)
-	  @items.push(item)
+	def complete
+		@completed_status = true
 	end
 	def assign_user(name)
 		@user = User.new(name)
@@ -96,16 +98,20 @@ class Item
   end
   # returning "true" if status is "done"  
 	def print_task	
-    "Complete: #{@completed_status}, Added on: #{@date_created}, Description: #{ @description }, by: (#{ @date_required}) assigned to: (#{@user.name if @user})"
   end
   def print_open_tasks
   	if @completed_status == false
     	"Description: #{ @description }, by: (#{ @date_required}) assigned to: (#{@user.name if @user})"
   	end
   end
+  
+  def task_delete(index)
+  	@items.shift_at(index)
+  end
+  
 end
 class User
-	attr_accessor :name
+	attr_reader :name
 	# Initialize user 
 	# not complete
 	def initialize(name)
