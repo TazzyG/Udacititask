@@ -55,10 +55,13 @@ class TodoList
 		end
 		puts 
 	end
+	def index 
+		@index
+	end
 	def delete_completed_tasks
-		@items.each_with_index do |task, index|			
-			 if task.completed? task.task_delete(index)
-			end
+		@items.each_with_index do |task, index, completed_status|			
+			@items.delete_if {|task, completed_status, index| completed_status == true}
+			@items.delete_at(index)
 	  end
 	end
 end
@@ -67,8 +70,7 @@ class Item
 
 	attr_reader :description, :completed_status, :date_created, :date_required
 
-	# Initialize item with a description and marked as
-	# not complete
+	# Initialize item with a description and marked as status incomplete
 	def initialize(item_description)
 	  @description = item_description
 	  @completed_status = false
@@ -82,7 +84,7 @@ class Item
 		@user.name
 	end
 	def complete
-		@completed_status = true
+		@completed_status
 	end
 	def assign_user(name)
 		@user = User.new(name)
@@ -97,23 +99,18 @@ class Item
   	@date_required = d + (days * 86400)
   end
   # returning "true" if status is "done"  
-	def print_task	
+	def print_task
+	"Complete: #{@completed_status}, Added on: #{@date_created}, Description: #{ @description }, by: (#{ @date_required}) assigned to: (#{@user.name if @user})"	
   end
   def print_open_tasks
   	if @completed_status == false
     	"Description: #{ @description }, by: (#{ @date_required}) assigned to: (#{@user.name if @user})"
   	end
   end
-  
-  def task_delete(index)
-  	@items.shift_at(index)
-  end
-  
 end
 class User
 	attr_reader :name
 	# Initialize user 
-	# not complete
 	def initialize(name)
 	  @name = name
 	end

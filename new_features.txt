@@ -2,4 +2,4 @@ Feature #1: Add Date Created to tasks
 Feature #2: Add Optional Due Date to Tasks
 Feature #3: Add Users and Assign Tasks
 Feature #4: Print a list of Open Tasks
-
+Feature #5: Delete completed Tasks and show off my wonderful Boolean Skills. :)

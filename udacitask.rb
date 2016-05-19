@@ -50,6 +50,9 @@ list_one.add_assignment(1, "Laurie")
 list_one.print_list_of_uncompleted_tasks
 # Print the list of open Tasks
 
+# Delete completed Tasks 
+list_one.delete_completed_tasks
+
 
 
 
