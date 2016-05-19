@@ -1,24 +1,29 @@
-commit 87b519ba160c89e11353479fc339599df13f015c
+Laurie-Gloges-MacBook-Pro:Udacitask lauriegloge$ git log
+commit 01c914d5047c21626d755cf98f1d031a8ffe8b18
 Author: Laurie <gloge@haathi-consulting.com>
-Date:   Tue May 17 12:35:37 2016 -0600
+Date:   Thu May 19 09:50:01 2016 -0600
 
-    Add ability to Assign a User
+    fix print_open_tasks
 
-commit 7468a2fc6305a3f3a819c3637b26093733be27f9
+commit 9d0b814be1d0a8ea3972ea3a2cb9cff3b878ab55
 Author: Laurie <gloge@haathi-consulting.com>
-Date:   Sun May 15 15:11:57 2016 -0600
+Date:   Wed May 18 14:03:41 2016 -0600
 
-    set up MasterList class but it does not add todo lists to array yet, work to
+    first attempt to delete items
 
-commit 88d8b7bf3fcc1d3d160c3697b1f41f476b652ca1
+commit 8bd05ac9ab9229c65b1b199beefe733f2fab8d2c
 Author: Laurie <gloge@haathi-consulting.com>
-Date:   Sat May 14 16:31:45 2016 -0600
+Date:   Tue May 17 13:57:26 2016 -0600
 
-    basic list requirements, todolist and tasks completed and tested
+    final test with print open tasks
 
-commit a505aecfe3f2519094f21d6b0bd3735b739e86b4
+commit 6693d7a8baff7c45bded0edb81ff44cfbad393e5
 Author: Laurie <gloge@haathi-consulting.com>
-Date:   Fri May 13 18:12:54 2016 -0600
+Date:   Tue May 17 13:47:28 2016 -0600
 
-    simple to do list with initilize and add item
+    add print list of open tasks
+
+commit 163231cf1060af786d7f4c364282ffcc153f7ddd
+Author: Laurie <gloge@haathi-consulting.com>
+Date:   Tue May 17 12:38:36 2016 -0600
 :
